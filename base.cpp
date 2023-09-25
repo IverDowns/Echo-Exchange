@@ -19,6 +19,7 @@ void uptdClt();
 void delClt();
 
 //LOG
+void login();
 void log_clt();
 void log_adm();
 bool verification_clt();
@@ -28,7 +29,7 @@ bool verification_adm();
 int user;
 char pass;
 
-int login() {
+void login() {
     int opt;
 
     cout << "Bienvenido" << endl;
@@ -55,7 +56,6 @@ int login() {
         }
     } while (opt != 3);
     
-    return 0;
 }
 
 void log_clt()
@@ -125,8 +125,10 @@ bool verification_clt() {
 }
 
 bool verification_adm() {
-
-    if (user == "adminEchx" && pass == "3chexchAdm2$em") {
+    int admin_id = 00017;
+    const char* adm_pass = "3chexchAdm2$em";
+    const char* pass = "3chexchAdm2$em";
+    if (user == admin_id && pass == adm_pass) {
         return true;
     } else {
         return false;
